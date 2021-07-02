@@ -1,0 +1,69 @@
+[
+
+  {
+    "City": "London",
+    "FromDate": "22/01/2020",
+    "ToDate": "22/02/2020",
+    "HotelFare": 2.2,
+    "HotelName": "LO hotel",
+    "HotelRate": 2,
+    "NumberOfAdults": 2,
+    "ProviderName": "BestHotels",
+    "RoomAmenities": "one,two"
+  },
+  {
+    "City": "London",
+    "FromDate": "22/01/2020",
+    "ToDate": "22/02/2020",
+    "HotelFare": 22.2,
+    "HotelName": "LO hotel2",
+    "HotelRate": 4,
+    "NumberOfAdults": 2,
+    "ProviderName": "BestHotels",
+    "RoomAmenities": "one,two,three"
+  },
+  {
+    "City": "London",
+    "FromDate": "22/01/2020",
+    "ToDate": "22/02/2020",
+    "HotelFare": 232.2,
+    "HotelName": "LO hotel3",
+    "HotelRate": 5,
+    "NumberOfAdults": 2,
+    "ProviderName": "BestHotels",
+    "RoomAmenities": "one,two,three,four"
+  },
+  {
+    "ProviderName": "BestHotels",
+    "City": "Tokyo",
+    "FromDate": "13/03/2020",
+    "ToDate": "13/05/2020",
+    "NumberOfAdults": 3,
+    "HotelName": "TO hotel",
+    "HotelRate": 3,
+    "HotelFare": 3.3,
+    "RoomAmenities": "three,four"
+  },
+  {
+    "ProviderName": "CrazyHotels",
+    "City": "Amman",
+    "FromDate": "22/01/2019",
+    "ToDate": "22/02/2019",
+    "NumberOfAdults": 4,
+    "HotelName": "AM hotel",
+    "HotelRate": 4,
+    "HotelFare": 4.2,
+    "RoomAmenities": "one,two,three"
+  },
+  {
+    "ProviderName": "CrazyHotels",
+    "City": "Berlin",
+    "FromDate": "22/01/2021",
+    "ToDate": "22/02/2021",
+    "NumberOfAdults": 4,
+    "HotelName": "BR hotel",
+    "HotelRate": 4,
+    "HotelFare": 4.2,
+    "RoomAmenities": "one,two,three"
+  }
+]

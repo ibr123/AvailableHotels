@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model AvailableHotels.Models.HotelsData
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" defer></script>
+
+<head>
+    <style>
+
+#myDIV {
+  width: 300px;
+  height: 200px;
+  border: 15px solid coral;
+  animation: mymove 5s infinite;
+}
+
+/*keyframes mymove {
+  50% {border-left-color: lightblue;}
+}*/
+    </style>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Available Hotels app</h1>
+
+</div>
+
+<hr />
+<div name="hiddendata">
+    @Html.HiddenFor(m => m.fromDate, new { id = "hifromdate" })
+    @Html.HiddenFor(m => m.toDate, new { id = "hitodate" })
+    @Html.HiddenFor(m => m.city, new { id = "hincity" })
+    @Html.HiddenFor(m => m.numberOfAdults, new { id = "hiadults" })
+</div>
+
+<div id="divhotelstable" style="width: 1000px; border: 1px solid black; padding: 3px">
+    <table id="tblhotels">
+        <thead>
+            <tr>
+                <th>Provider</th>
+                <th>Hotel Name</th>
+                <th>Fare</th>
+                <th>Amenities</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+
+<script>
+    ///table object
+    var tableHotels;
+
+    initializeHotelsTable();
+
+    function initializeHotelsTable() {
+        var args = {};
+
+        args.fromDate = $("#hifromdate").val();
+        args.toDate = $("#hitodate").val();
+        args.city = $("#hincity").val();
+        args.numberOfAdults = $("#hiadults").val();
+
+        $.ajax({
+            type: "GET",
+            url: "/Hotels/GetHotelsData",
+            data: args,
+            dataType: "text",
+            success: function (result) {
+
+                if (tableHotels == null) {
+
+                    var json = $.parseJSON(result);
+
+                    tableHotels = $('#tblhotels').dataTable({
+                        paging: true,
+                        sort: true,
+                        searching: true,
+                        scrollY: 200,
+                        data: json,
+                        columns: [
+                            { 'data': 'provider' },
+                            { 'data': 'hotelName' },
+                            { 'data': 'fare' },
+                            { 'data': 'amenities' },
+                        ]
+                    });
+                }
+            }
+        });
+    }
+</script>
